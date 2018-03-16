@@ -97,6 +97,8 @@ function appendToDom(response){
         tr.append('<td>' + newNumbers.number2 + '</td>');
         tr.append('<td>' + newNumbers.answer + '</td>');
         $('#calculatorBody').append(tr);
+        $('#answerHead').empty()
+        $('#answerHead').append('<h2>The Answer is: ' + newNumbers.answer + '</h2>');
     }
 }
 
