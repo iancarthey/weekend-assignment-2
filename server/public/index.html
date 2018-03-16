@@ -11,11 +11,27 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <input id="input1" type="number" placeholder="First Number">
-    <input id="input2" type="number" placeholder="Second Number">
-    <button id="additionButton">Add</button>
-    <button id="subtractButton">Subtract</button>
-    <button id="multiplyButton">Multiply</button>
-    <button id="divisionButton">Divide</button>
+    <div id="container">
+        <input id="input1" type="number" placeholder="First Number">
+        <input id="input2" type="number" placeholder="Second Number">
+        
+        <button id="additionButton">Add</button>
+        <button id="subtractButton">Subtract</button>
+        <button id="multiplyButton">Multiply</button>
+        <button id="divisionButton">Divide</button>
+
+    </div>
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Number 1</th>
+                <th>Number 2</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody id="calculatorBody">
+            <!-- appending info here -->
+        </tbody>
+    </table>
 </body>
 </html>
