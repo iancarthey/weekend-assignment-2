@@ -14,13 +14,13 @@ app.use(express.static('server/public'));
 app.post('/calc', (req,res) => {
     console.log(req.body);
     let newNumbers = req.body;
-    if( newNumbers.operator === 'add'){
+    if( newNumbers.operator === '+'){
         newNumbers.answer = parseInt(newNumbers.number1) + parseInt(newNumbers.number2);
-    } else if( newNumbers.operator === 'subtract' ){
+    } else if( newNumbers.operator === '-' ){
         newNumbers.answer = parseInt(newNumbers.number1) - parseInt(newNumbers.number2);
-    } else if( newNumbers.operator === 'multiply' ){
+    } else if( newNumbers.operator === 'x' ){
         newNumbers.answer = parseInt(newNumbers.number1) * parseInt(newNumbers.number2);
-    } else if( newNumbers.operator === 'divide' ){
+    } else if( newNumbers.operator === '/' ){
         newNumbers.answer = parseInt(newNumbers.number1) / parseInt(newNumbers.number2);
     };
     problemArray.push(newNumbers);

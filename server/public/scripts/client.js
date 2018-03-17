@@ -52,7 +52,7 @@ function addNumbers(){
     let number1 = $('#input1').val();
     let number2 = $('#input2').val();
     let newNumbers = new Value(number1, number2);
-    newNumbers.operator = 'add';
+    newNumbers.operator = '+';
     console.log(newNumbers);
     sendProblem(newNumbers);
 }
@@ -62,7 +62,7 @@ function subtractNumbers(){
     let number1 = $('#input1').val();
     let number2 = $('#input2').val();
     let newNumbers = new Value(number1, number2);
-    newNumbers.operator = 'subtract';
+    newNumbers.operator = '-';
     console.log(newNumbers);
     sendProblem(newNumbers);
 }
@@ -72,7 +72,7 @@ function multiplyNumbers(){
     let number1 = $('#input1').val();
     let number2 = $('#input2').val();
     let newNumbers = new Value(number1, number2);
-    newNumbers.operator = 'multiply';
+    newNumbers.operator = 'x';
     console.log(newNumbers);
     sendProblem(newNumbers);
 }
@@ -82,7 +82,7 @@ function divideNumbers(){
     let number1 = $('#input1').val();
     let number2 = $('#input2').val();
     let newNumbers = new Value(number1, number2);
-    newNumbers.operator = 'divide';
+    newNumbers.operator = '/';
     console.log(newNumbers);
     sendProblem(newNumbers);
 }
@@ -92,13 +92,16 @@ function appendToDom(response){
     $('#calculatorBody').empty();
     for(let newNumbers of response){
         console.log(newNumbers);
-        tr = $('<tr></tr>');
-        tr.append('<td>' + newNumbers.number1 + '</td>');
-        tr.append('<td>' + newNumbers.number2 + '</td>');
-        tr.append('<td>' + newNumbers.answer + '</td>');
-        $('#calculatorBody').append(tr);
         $('#answerHead').empty()
         $('#answerHead').append('<h2>The Answer is: ' + newNumbers.answer + '</h2>');
+        tr = $('<tr></tr>');
+        tr.append('<td>' + newNumbers.number1 + '</td>');
+        tr.append('<td>' + newNumbers.operator + '</td>');
+        tr.append('<td>' + newNumbers.number2 + ' =</td>');
+        tr.append('<td>' + newNumbers.answer + '</td>');
+        $('#calculatorBody').append(tr);
+        // $('#answerHead').empty()
+        // $('#answerHead').append('<h2>The Answer is: ' + newNumbers.answer + '</h2>');
     }
 }
 
