@@ -129,7 +129,7 @@ function refreshPage(){
         console.log(response);
         appendToDom(response);
         $('#answerLine').empty();
-        
+        numbersArray = [];
     })
 }
 
