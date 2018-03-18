@@ -62,42 +62,46 @@ function getProblem(){
 
 //function for addition click listener
 function addNumbers(){
-    let number1 = $('#input1').val();
-    let number2 = $('#input2').val();
-    let newNumbers = new Value(number1, number2);
-    newNumbers.operator = '+';
-    console.log(newNumbers);
+    // let number1 = $('#input1').val();
+    // let number2 = $('#input2').val();
+    // let newNumbers = new Value(number1, number2);
+    // newNumbers.operator = '+';
+    // console.log(newNumbers);
     // sendProblem(newNumbers);
+    numbersArray.push('+');
 }
 
 //function for subtraction click listener
 function subtractNumbers(){
-    let number1 = $('#input1').val();
-    let number2 = $('#input2').val();
-    let newNumbers = new Value(number1, number2);
-    newNumbers.operator = '-';
-    console.log(newNumbers);
+    // let number1 = $('#input1').val();
+    // let number2 = $('#input2').val();
+    // let newNumbers = new Value(number1, number2);
+    // newNumbers.operator = '-';
+    // console.log(newNumbers);
     // sendProblem(newNumbers);
+    numbersArray.push('-');
 }
 
 //function for multiply click listener
 function multiplyNumbers(){
-    let number1 = $('#input1').val();
-    let number2 = $('#input2').val();
-    let newNumbers = new Value(number1, number2);
-    newNumbers.operator = 'x';
-    console.log(newNumbers);
+    // let number1 = $('#input1').val();
+    // let number2 = $('#input2').val();
+    // let newNumbers = new Value(number1, number2);
+    // newNumbers.operator = 'x';
+    // console.log(newNumbers);
     // sendProblem(newNumbers);
+    numbersArray.push('x');
 }
 
 //function for division click listener
 function divideNumbers(){
-    let number1 = $('#input1').val();
-    let number2 = $('#input2').val();
-    let newNumbers = new Value(number1, number2);
-    newNumbers.operator = '/';
-    console.log(newNumbers);
+    // let number1 = $('#input1').val();
+    // let number2 = $('#input2').val();
+    // let newNumbers = new Value(number1, number2);
+    // newNumbers.operator = '/';
+    // console.log(newNumbers);
     // sendProblem(newNumbers);
+    numbersArray.push('/');
 }
 
 //appending to dom
@@ -105,8 +109,8 @@ function appendToDom(response){
     $('#calculatorBody').empty();
     for(let newNumbers of response){
         console.log(newNumbers);
-        $('#answerHead').empty()
-        $('#answerHead').append('<h2>The Answer is: ' + newNumbers.answer + '</h2>');
+        $('#answerLine').empty()
+        $('#answerLine').append('<h2>The Answer is: ' + newNumbers.answer + '</h2>');
         tr = $('<tr></tr>');
         tr.append('<td>' + newNumbers.number1 + '</td>');
         tr.append('<td>' + newNumbers.operator + '</td>');
@@ -124,13 +128,20 @@ function refreshPage(){
     }).done(function(response){
         console.log(response);
         appendToDom(response);
+        $('#answerLine').empty();
         
     })
 }
 
 //function for equals click listener
 function equalNumbers(){
+    let number1 = numbersArray[0];
+    let number2 = numbersArray[2];
+    let newNumbers = new Value(number1, number2);
+    newNumbers.operator = numbersArray[1];
+    console.log(newNumbers);
     sendProblem(newNumbers);
+    numbersArray = [];
 }
 
 //function for clicking the one button
