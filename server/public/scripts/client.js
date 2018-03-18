@@ -142,6 +142,7 @@ function equalNumbers(){
     console.log(newNumbers);
     sendProblem(newNumbers);
     numbersArray = [];
+    $('#input1').val('');
 }
 
 //function for clicking the one button

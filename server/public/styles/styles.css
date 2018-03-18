@@ -1,3 +1,13 @@
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    font-family: cursive;
+    color: dimgray;
+    background-color: oldlace;
+}
+
 td {
     font-size: 24px;
 }
@@ -6,4 +16,24 @@ th, td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+}
+
+#resultsTable {
+    background-color: oldlace;
+    color: dimgray;
+}
+
+#answerLine {
+    background-color: oldlace;
+    color: dimgray;
+}
+
+
+.calc, .calcRow {
+    border: 1px solid black;
+}
+
+#calculatorTable {
+    background-color: oldlace;
+    color: dimgray;
 }

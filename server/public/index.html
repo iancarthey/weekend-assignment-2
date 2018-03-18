@@ -12,27 +12,49 @@
 <body>
     <h1>Calculator</h1>
     <div id="container">
-        <input id="input1" type="number" placeholder="First Number">
-        <!-- <input id="input2" type="number" placeholder="Second Number"> -->
-
-        <button id="oneButton">1</button>
-        <button id="twoButton">2</button>
-        <button id="threeButton">3</button>
-        <button id="fourButton">4</button>
-        <button id="fiveButton">5</button>
-        <button id="sixButton">6</button>
-        <button id="sevenButton">7</button>
-        <button id="eightButton">8</button>
-        <button id="nineButton">9</button>
-        <button id="zeroButton">0</button>
-        
-        <button id="additionButton">+</button>
-        <button id="subtractButton">-</button>
-        <button id="multiplyButton">x</button>
-        <button id="divisionButton">/</button>
-        <button id="equalsButton">=</button>
-
+        <table id="calculatorTable">
+            <thead>
+            </thead>
+            <tbody id="calculator">
+                <tr class="calc">
+                    <input id="input1" type="number" placeholder="First Number">
+                    <!-- <input id="input2" type="number" placeholder="Second Number"> -->
+                </tr>
+                <tr class="calc">
+                        <td class="calcRow">
+                            <button id="oneButton">1</button>
+                            <button id="twoButton">2</button>
+                            <button id="threeButton">3</button>
+                            <button id="additionButton">+</button>
+                        </td>
+                </tr>
+                <tr class="calc">
+                    <td class="calcRow">
+                        <button id="fourButton">4</button>
+                        <button id="fiveButton">5</button>
+                        <button id="sixButton">6</button>
+                        <button id="subtractButton">-</button>
+                    </td>
+                </tr>
+                <tr class="calc">
+                    <td class="calcRow">
+                        <button id="sevenButton">7</button>
+                        <button id="eightButton">8</button>
+                        <button id="nineButton">9</button>
+                        <button id="multiplyButton">x</button>
+                    </td>
+                </tr>
+                <tr class="calc">
+                    <td class="calcRow">
+                        <button id="divisionButton">/</button>
+                        <button id="zeroButton">0</button>
+                        <button id="equalsButton">=</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <div id="answerLine"></div>
     <table id="resultsTable">
         <thead>
         </thead>
@@ -40,7 +62,6 @@
             <!-- appending info here -->
         </tbody>
     </table>
-    <div id="answerLine"></div>
     <button id="clearButton">clear</button>
 </body>
 </html>
